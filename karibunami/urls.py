@@ -4,15 +4,15 @@ from . import views
 app_name = "karibunami"
 urlpatterns = [
     # ex: /karibunami/
-    path("", views.home_page, name="home"),
+    path("", views.index, name="index"),
     # ex: /karibunami/verify_user
-    path("verify_user", views.verify_user, name="verify"),
+    # path("verify_user", views.verify_user, name="verify"),
     # ex: /karibunami/register
-    path("register", views.register_user, name="register"),
+    # path("register", views.register_user, name="register"),
     # ex: /karibunami/reset_password
-    path("reset_password", views.reset_password, name="reset"),
+    # path("reset_password", views.reset_password, name="reset"),
     # ex: /karibunami/reset_password_link
-    path("reset_password_link", views.reset_password_link, name="password_link"),
+    # path("reset_password_link", views.reset_password_link, name="password_link"),
     # ex: /karibunami/login
     path("login", views.login, name="login"),
     # ex /karibunami/place
@@ -26,5 +26,7 @@ urlpatterns = [
     # ex /karibunami/logout
     path("logout", views.logout, name="logout"),
     # ex /karibunami/csrf
-    path("csrf", views.get_csrf_token)
+    path("csrf", views.get_csrf_token),
+    # ex /karibunami/callback
+    path("callback", views.callback, name="callback"),
 ]

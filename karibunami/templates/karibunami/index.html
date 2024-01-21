@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Auth0 Example</title>
+  </head>
+  <body>
+    {% if session %}
+    <h1>Welcome {{session.userinfo.name}}!</h1>
+    <p><a href="{% url 'karibunami:logout' %}">Logout</a></p>
+    <!-- <div><pre>{{pretty}}</pre></div> -->
+    <form action="{% url 'karibunami:places' %}" method="post">
+      <!-- Replace "/your-server-endpoint" with the actual URL where your server handles the POST request -->
+
+      <!-- Text input field for place_name -->
+      <label for="place_name">Place Name:</label>
+      <input type="text" id="place_name" name="place_name" required>
+
+      <!-- Submit button -->
+      <button type="submit">Submit</button>
+  </form>
+    {% else %}
+    <h1>Welcome Guest</h1>
+    <p><a href="{% url 'karibunami:login' %}">Login</a></p>
+    <form action="{% url 'karibunami:places' %}" method="post">
+      <!-- Replace "/your-server-endpoint" with the actual URL where your server handles the POST request -->
+
+      <!-- Text input field for place_name -->
+      <label for="place_name">Place Name:</label>
+      <input type="text" id="place_name" name="place_name" required>
+
+      <!-- Submit button -->
+      <button type="submit">Submit</button>
+  </form>
+    {% endif %}
+  </body>
+</html>
